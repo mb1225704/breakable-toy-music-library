@@ -15,6 +15,25 @@ ActiveRecord::Schema.define(version: 2022_11_15_185050) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "artists", force: :cascade do |t|
+    t.string "artist_name", null: false
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "album_name", null: false
+    t.string "youtube_link"
+    t.string "youtube_timestamp"
+    t.bigint "artist_id", null: false
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
+  end
+
+  create_table "techniques", force: :cascade do |t|
+    t.string "technique_name", null: false
+    t.bigint "song_id", null: false
+    t.index ["song_id"], name: "index_techniques_on_song_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
