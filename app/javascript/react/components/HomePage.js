@@ -1,5 +1,5 @@
 import React from 'react'
-
+import SongPage from './SongPage'
 import { BrowserRouter, browserRouter, Route, Switch } from 'react-router-dom'
 
 export const HomePage = (props) => {
