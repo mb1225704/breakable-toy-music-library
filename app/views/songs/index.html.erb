@@ -1,0 +1,10 @@
+<div class="grid-x grid-margin-x">
+    <% @songs.each do |song|%>
+        <//% link_to "/songs/#{song.id}", class:  do%>
+            <div class="cell text-center large-4 small-12 callout song-card">
+                <p><%= "#{song.name} (#{song.album_name})" %></p>
+                <p><%= "#{song.artist.artist_name}"%></p>
+            </div>
+        <//%end%>
+    <%end%>
+</div>
