@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import IndexSongTiles from './IndexSongTileComponent'
+import SearchBar from './SearchBar'
 
 const IndexPage = (props) => {
     const [songs, setSongs] = useState([])
@@ -46,6 +47,10 @@ const IndexPage = (props) => {
       <div>
       {IndexSongMap}
       </div>
+      <SearchBar
+      song = {songs}
+      setSongs = {setSongs}
+      />
     </div>
   )
 }

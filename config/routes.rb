@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         resources :artists, only: [:show]
       end
       get'/current-user', to: "current_user#index"
+      post "/songs/search", to: "songs#search"
     end
   end
 end

@@ -16,6 +16,7 @@ const NewSongForm = (props) => {
   const [newSong, setNewSong] = useState({
     name: "",
     album_name: "",
+    artist_name:"",
   })
 
   const handleUpdate = (event) => {
@@ -94,8 +95,8 @@ const NewSongForm = (props) => {
         <label htmlFor="album_name">Album Name</label>
         <input id="album_name" name="album_name" type="text" value={newSong.album_name} onChange={handleUpdate} />
         
-        <label htmlFor="artist_id">Artist Id</label>
-        <input id="artist_id" name="artist_id" type="text" value={newSong.artist_id} onChange={handleUpdate} />
+        <label htmlFor="artist_name">Artist Id</label>
+        <input id="artist_name" name="artist_name" type="text" value={newSong.artist_name} onChange={handleUpdate} />
 
         <input type="submit" value="Add song" className="button"/>
       </form>
