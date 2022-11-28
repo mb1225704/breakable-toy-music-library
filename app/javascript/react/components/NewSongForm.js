@@ -50,7 +50,7 @@ const NewSongForm = (props) => {
     if (validSubmission()) {
       await postUpdate(newSong)
       
-    }
+    }  
   }
 
   const postUpdate = async (formPayload) => {
