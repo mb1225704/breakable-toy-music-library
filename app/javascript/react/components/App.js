@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import HomePage from './HomePage'
 import IndexPage from './IndexPage'
 import NewSongForm from './NewSongForm'
-import SongShowPage from './SongShowComponent'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 
@@ -40,12 +39,10 @@ export const App = (props) => {
       <Switch>
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/songs" component={IndexPage}/>
-
+        {/* <Route exact path="/songs/new" component={NewSongForm}/> */}
 
         <Route exact path="/songs/new">
-          <NewSongForm user={user} component={NewSongForm}/>
-        </Route> 
-        <Route exact path="/songs/:id" component={SongShowPage}>
+          <NewSongForm user={user} />
         </Route>
       </Switch>
     </BrowserRouter>

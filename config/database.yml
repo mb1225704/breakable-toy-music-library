@@ -80,4 +80,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: breakable-toy-music-library_production
+  username: breakable-toy-music-library
+  password: <%= ENV['BREAKABLE-TOY-MUSIC-LIBRARY_DATABASE_PASSWORD'] %>
