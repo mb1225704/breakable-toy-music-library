@@ -9,14 +9,14 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :songs, only: [:index, :create] do
+      resources :songs, only: [:index, :create, :show] do
         resources :artists, only: [:show]
-        resources :techniques, only: [:show]
+        resources :techniques, only: [:show, :create]
       end
       get'/current-user', to: "current_user#index"
       get "/songs/search", to: "songs#search"
       get "/songs/spotify_search", to: "songs#spotify_search"
-      resources :songs, only: [:show]
+      
     end
   end
 end

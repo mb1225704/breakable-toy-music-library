@@ -19,3 +19,5 @@ song_3 = Song.create(name: "War Pigs", album_name: "Paranoid", artist: artist_3)
 song_4 = Song.create(name: "Killer Queen", album_name: "Sheer Heart Attack", artist: artist_4)
 song_5 = Song.create(name: "Immigrant Song", album_name: "Led Zeppelin III", artist: artist_5)
 song_6 = Song.create(name: "Always on the run", album_name: "Mama Said", artist: artist_6)
+
+technqiue_1 = Technique.create(technique_name: "two handed tapping", song_id: 1)

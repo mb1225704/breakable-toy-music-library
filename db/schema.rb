@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_21_212300) do
+ActiveRecord::Schema.define(version: 2022_11_15_185050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,15 +19,6 @@ ActiveRecord::Schema.define(version: 2022_11_21_212300) do
     t.string "artist_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "skills", force: :cascade do |t|
-    t.bigint "technique_id", null: false
-    t.bigint "song_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["song_id"], name: "index_skills_on_song_id"
-    t.index ["technique_id"], name: "index_skills_on_technique_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -44,8 +35,10 @@ ActiveRecord::Schema.define(version: 2022_11_21_212300) do
 
   create_table "techniques", force: :cascade do |t|
     t.string "technique_name", null: false
+    t.bigint "song_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_techniques_on_song_id"
   end
 
   create_table "users", force: :cascade do |t|

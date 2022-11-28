@@ -123,8 +123,8 @@ const NewSongForm = (props) => {
 
       <SpotifyTiles
         key = {song.id}
-        handleclick = {handleClick}
         name = {song.name}
+        handleClick = {handleClick}
         />
     )
   } 
