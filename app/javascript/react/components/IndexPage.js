@@ -39,7 +39,7 @@ const IndexPage = (props) => {
         />
     )
 })
-
+ 
   return (
     <div>
         <SearchBar
