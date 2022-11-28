@@ -81,7 +81,7 @@ const NewSongForm = (props) => {
     if (validSubmission()) {
       await postSpotify(newSong)
       
-    }
+    }  
   }
 
   //would have to create a post request with the formpayload info
