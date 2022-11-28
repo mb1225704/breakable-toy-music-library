@@ -10,28 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_15_185050) do
+ActiveRecord::Schema.define(version: 2022_11_21_212300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
     t.string "artist_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.bigint "technique_id", null: false
+    t.bigint "song_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_skills_on_song_id"
+    t.index ["technique_id"], name: "index_skills_on_technique_id"
   end
 
   create_table "songs", force: :cascade do |t|
     t.string "name", null: false
     t.string "album_name", null: false
+    t.string "tab_link"
     t.string "youtube_link"
     t.string "youtube_timestamp"
     t.bigint "artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
 
   create_table "techniques", force: :cascade do |t|
     t.string "technique_name", null: false
-    t.bigint "song_id", null: false
-    t.index ["song_id"], name: "index_techniques_on_song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

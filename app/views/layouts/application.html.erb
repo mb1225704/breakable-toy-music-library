@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GuitarWorld</title>
+  <title>Guitar Builder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -9,7 +9,7 @@
 <body>
   
   <nav class="top-bar">
-    <h1><a href="/">GuitarWorld</a></h1>
+    <h1><a href="/">Guitar Builder</a></h1>
 
     <section class="top-bar-section">
       <ul class="right">
@@ -39,6 +39,9 @@
     <%- end -%>
   <%- end -%>
   <%= javascript_pack_tag 'application' %>
+
+  
+  <link rel="alternate" type="application/json+oembed" href="https://open.spotify.com/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fshow%2F5eXZwvvxt3K2dxha3BSaAe" />
   
   <%= yield :extra_footer %>
 </body>

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import IndexSongTiles from './IndexSongTileComponent'
 import SearchBar from './SearchBar'
+import { Link } from "react-router-dom"
 
 const IndexPage = (props) => {
     const [songs, setSongs] = useState([])
@@ -28,12 +29,10 @@ const IndexPage = (props) => {
     }, [])
     const IndexSongMap = songs.map((song) => {
         
-        
-        // song.artist?.name
-        // undefined method `.name` for nil class
     return (
         <IndexSongTiles
             key={song.id}
+            id={song.id}
             name={song.name}
             album={song.album_name}
             artist={song.artist.artist_name}
@@ -43,14 +42,15 @@ const IndexPage = (props) => {
 
   return (
     <div>
+        <SearchBar
+      song = {songs}
+      setSongs = {setSongs}
+      />
+      <Link className="button" to={`/songs/new`}>Add A Song</Link>
       <h2>All Songs</h2>
       <div>
       {IndexSongMap}
       </div>
-      <SearchBar
-      song = {songs}
-      setSongs = {setSongs}
-      />
     </div>
   )
 }

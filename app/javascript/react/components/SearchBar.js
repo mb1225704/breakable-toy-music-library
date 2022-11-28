@@ -14,15 +14,16 @@ const SearchBar = (props) => {
     });
 
     try {
-      const response = await fetch("/api/v1/songs/search", {
-        method: "POST",
-        credentials: "same-origin",
-        body: body,
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
+      const response = await fetch(`/api/v1/songs/search?search=${body}`)
+      // const response = await fetch("/api/v1/songs/search", {
+      //   method: "POST",
+      //   credentials: "same-origin",
+      //   body: body,
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Accept: "application/json",
+      //   },
+      // });
 
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`;
